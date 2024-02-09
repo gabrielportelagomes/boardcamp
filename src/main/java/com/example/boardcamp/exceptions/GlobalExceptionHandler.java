@@ -46,5 +46,19 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(e.getMessage(), e.getStatus());
     }
 
+    @ExceptionHandler(GameNotFoundException.class)
+    public ResponseEntity<String> handleGameNotFoundException(GameNotFoundException e) {
+        return new ResponseEntity<>(e.getMessage(), e.getStatus());
+    }
+
+    @ExceptionHandler(RentalNotFoundException.class)
+    public ResponseEntity<String> handleRentalNotFoundException(RentalNotFoundException e) {
+        return new ResponseEntity<>(e.getMessage(), e.getStatus());
+    }
+
+    @ExceptionHandler(RentalUnprocessableException.class)
+    public ResponseEntity<String> handleRentalUnprocessableException(RentalUnprocessableException e) {
+        return new ResponseEntity<>(e.getMessage(), e.getStatus());
+    }
 
 }
