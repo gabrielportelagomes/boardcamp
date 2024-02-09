@@ -35,4 +35,16 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> handleGameException(GameConflictException e) {
         return new ResponseEntity<>(e.getMessage(), e.getStatus());
     }
+
+    @ExceptionHandler(CustomerNotFoundException.class)
+    public ResponseEntity<String> handleCustomerNotFoundException(CustomerNotFoundException e) {
+        return new ResponseEntity<>(e.getMessage(), e.getStatus());
+    }
+
+    @ExceptionHandler(CustomerConflictException.class)
+    public ResponseEntity<String> handleCustomerConflictException(CustomerConflictException e) {
+        return new ResponseEntity<>(e.getMessage(), e.getStatus());
+    }
+
+
 }
